@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6eeb830-84c3-4c1b-8e6b-392bb9db10ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FSTAcceptor/TestFSTs/fst1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSTAcceptor/TestFSTs/fst2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSTAcceptor/TestFSTs/fst3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSTAcceptor/TestFSTs/fst4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSTAcceptor/TestFSTs/fst5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSTAcceptor/fst_acceptor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSTAcceptor/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NFAtoDFAConverter/TestFSAs/fsa1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NFAtoDFAConverter/TestFSAs/fsa2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NFAtoDFAConverter/TestFSAs/fsa3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NFAtoDFAConverter/TestFSAs/fsa4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NFAtoDFAConverter/fsa_acceptor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NFAtoDFAConverter/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSAAcceptor/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FSAAcceptor/readme.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,13 +44,13 @@
         <counts>
           <entry key="py" value="283" />
           <entry key="sh" value="8" />
-          <entry key="txt" value="713" />
+          <entry key="txt" value="715" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="8" />
-          <entry key="PLAIN_TEXT" value="713" />
+          <entry key="PLAIN_TEXT" value="715" />
           <entry key="Python" value="283" />
         </counts>
       </usages-collector>
@@ -85,18 +72,13 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FSAAcceptor/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NFAtoDFAConverter/TestFSAs/fsa1">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -111,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FSTAcceptor/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -156,12 +138,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/FSAAcceptor/run.sh" />
-        <option value="$PROJECT_DIR$/FSAAcceptor/readme.txt" />
         <option value="$PROJECT_DIR$/FSAAcceptor/fsa_acceptor.py" />
         <option value="$PROJECT_DIR$/FSTAcceptor/TestFSTs/fst4" />
         <option value="$PROJECT_DIR$/FSTAcceptor/TestFSTs/fst5" />
         <option value="$PROJECT_DIR$/FSTAcceptor/fst_acceptor.py" />
         <option value="$PROJECT_DIR$/FSTAcceptor/readme.txt" />
+        <option value="$PROJECT_DIR$/FSAAcceptor/readme.txt" />
       </list>
     </option>
   </component>
@@ -188,6 +170,11 @@
             <path>
               <item name="Projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projects" type="462c0819:PsiDirectoryNode" />
+              <item name="FSAAcceptor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projects" type="b2602c69:ProjectViewProjectNode" />
@@ -407,17 +394,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FSAAcceptor/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FSTAcceptor/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret column="224" selection-start-column="224" selection-end-column="224" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FSAAcceptor/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>

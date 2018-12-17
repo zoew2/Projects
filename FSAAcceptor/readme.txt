@@ -2,7 +2,7 @@ This FSA acceptor takes in an FSA as described in a text file, and input strings
 
 It can be run using the following command:
 
-python3 fsa_acceptor.sh <fsa_file> <input_file> > <output_file>
+python3 fsa_acceptor.py <fsa_file> <input_file> > <output_file>
 
 fsa_file - an FSA file in Carmel format (https://github.com/graehl/carmel/blob/master/carmel/carmel-tutorial/carmel-training.pdf)
 
