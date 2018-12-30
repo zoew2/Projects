@@ -180,42 +180,6 @@ class TestFSTAcceptor(TestCase):
         self.assertTrue(acceptor.can_accept_string(self.test_empty_string))
         self.assertEqual('"g"', acceptor.output_string.strip())
 
-    def test_fst4(self):
-        """
-        Tests for FST4
-        :return: void
-        """
-
-        fst_filename = './TestFSTs/fst4'
-
-        with open(fst_filename, "r") as fst_file:
-            fst_rules = fst_file.readlines()
-
-        expected_output = '"PRO" "AUX" "NOUN"'
-
-        acceptor = FSTAcceptor(fst_rules)
-
-        self.assertTrue(acceptor.can_accept_string('"they" "can" "fish"'))
-        self.assertEqual(expected_output, acceptor.output_string.strip())
-
-    def test_fst5(self):
-        """
-        Tests for FST5
-        :return: void
-        """
-
-        fst_filename = './TestFSTs/fst5'
-
-        with open(fst_filename, "r") as fst_file:
-            fst_rules = fst_file.readlines()
-
-        expected_output = '"PRO" "AUX" "VERB" "NOUN"'
-
-        acceptor = FSTAcceptor(fst_rules)
-
-        self.assertTrue(acceptor.can_accept_string('"they" "can" "take" "table"'))
-        self.assertEqual(expected_output, acceptor.output_string.strip())
-
 
 def main():
     """

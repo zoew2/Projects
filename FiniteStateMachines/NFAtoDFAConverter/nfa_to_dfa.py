@@ -175,26 +175,6 @@ class TestNFAtoDFA(TestCase):
 
         self.assertCountEqual(expected, converter.print_in_carmel_format().split("\n"))
 
-    def test_nfa2(self):
-        """
-        Tests for NFA2
-        :return: void
-        """
-        nfa_filename = './TestFSAs/nfa2'
-
-        with open(nfa_filename, "r") as nfa_file:
-            nfa_rules = nfa_file.readlines()
-
-        converter = NFAtoDFA(nfa_rules)
-        converter.convert_nfa_to_dfa()
-
-        dfa_filename = './TestFSAs/dfa2'
-
-        with open(dfa_filename, "r") as dfa_file:
-            expected = [line.strip("\n") for line in dfa_file.readlines()]
-
-        self.assertCountEqual(expected, converter.print_in_carmel_format().split("\n"))
-
 
 def main():
     """
