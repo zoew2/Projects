@@ -177,20 +177,7 @@ class TestExpandFSM(TestCase):
 
     maxDiff = None
 
-    test_1_lexicon = '''
-        dog reg-noun
-        cat reg-noun
-        
-        s   plural-s
-        
-        goose   irreg-pl-noun
-        oxen    irreg-pl-noun
-        
-        geese   irreg-sg-noun
-        ox      irreg-sg-noun
-    '''
-
-    test_2_lexicon = '''
+    test_lexicon = '''
         walk       reg_verb_stem
         talk       reg_verb_stem
         impeach    reg_verb_stem
@@ -214,16 +201,7 @@ class TestExpandFSM(TestCase):
         s          3sg
     '''
 
-    test_1_morph_rules = '''
-        2
-        (0 (1 reg-noun))
-        (1 (2 plural-s))
-        (1 (2 *e*))
-        (0 (2 irreg-pl-noun))
-        (0 (2 irreg-sg-noun))
-    '''
-
-    test_2_morph_rules = '''
+    test_morph_rules = '''
         q3
         (q0 (q3 irreg_past_verb_form))
         (q0 (q1 reg_verb_stem))
@@ -237,25 +215,67 @@ class TestExpandFSM(TestCase):
         (q2 (q3 *e*))
         '''
 
-    test_1_expected_output = '''
-        label_3
-        (label_1 (q3 "c"))
-        (label_1 (q5 "g"))
-        (label_1 (q1 "d"))
-        (label_3 (label_2 ""))
-        (label_3 (label_2 "s"))
-        (q7 (q8 "a"))
-        (q12 (label_2 "e"))
-        (q6 (label_3 "g"))
-        (q3 (q4 "s"))
-        (q5 (q6 "o"))
-        (q11 (q12 "s"))
-        (q4 (label_2 "e"))
-        (q2 (q3 "e"))
-        (q8 (label_3 "t"))
-        (q1 (q10 "o"))
-        (q1 (q2 "e"))
-        (q10 (q11 "o"))
+    test_expected_output = '''
+        label_2
+        (label_1 (q1 "c" *e*))
+        (label_1 (q6 "a" *e*))
+        (label_1 (q8 "s" *e*))
+        (label_1 (q15 "e" *e*))
+        (label_1 (q27 "w" *e*))
+        (label_1 (q30 "t" *e*))
+        (label_1 (q33 "i" *e*))
+        (q1 (q2 "a" *e*))
+        (q1 (q52 "u" *e*))
+        (q2 (q3 "u" *e*))
+        (q3 (q4 "g" *e*))
+        (q4 (q5 "h" *e*))
+        (q5 (label_2 "t" "caught/irreg_past_verb_form"))
+        (q6 (q7 "t" *e*))
+        (q7 (label_2 "e" "ate/irreg_past_verb_form"))
+        (q8 (q9 "a" *e*))
+        (q8 (q12 "p" *e*))
+        (q8 (q20 "u" *e*))
+        (q8 (q58 "i" *e*))
+        (q9 (q10 "n" *e*))
+        (q10 (label_2 "g" "sang/irreg_past_verb_form"))
+        (q12 (q13 "o" *e*))
+        (q12 (q55 "e" *e*))
+        (q13 (q14 "k" *e*))
+        (q14 (q26 "e" *e*))
+        (q15 (q16 "a" *e*))
+        (q16 (q17 "t" *e*))
+        (q17 (q18 "e" *e*))
+        (q18 (label_2 "n" "eaten/irreg_past_verb_form"))
+        (q20 (q21 "n" *e*))
+        (q21 (label_2 "g" "sung/irreg_past_verb_form"))
+        (q26 (label_2 *e* "spoke/irreg_past_verb_form"))
+        (q26 (label_2 "n" "spoken/irreg_past_verb_form"))
+        (q27 (q28 "a" *e*))
+        (q28 (q29 "l" *e*))
+        (q29 (label_3 "k" "walk/reg_verb_stem"))
+        (q30 (q31 "a" *e*))
+        (q31 (q32 "l" *e*))
+        (q32 (label_3 "k" "talk/reg_verb_stem"))
+        (q33 (q34 "m" *e*))
+        (q34 (q35 "p" *e*))
+        (q35 (q36 "e" *e*))
+        (q36 (q37 "a" *e*))
+        (q37 (q38 "c" *e*))
+        (q38 (label_3 "h" "impeach/reg_verb_stem"))
+        (q52 (label_4 "t" "cut/irreg_verb_stem"))
+        (q55 (q56 "a" *e*))
+        (q56 (label_4 "k" "speak/irreg_verb_stem"))
+        (q58 (q59 "n" *e*))
+        (q59 (label_4 "g" "sing/irreg_verb_stem"))
+        (label_3 (q60 "e" *e*))
+        (label_3 (label_2 *e* *e*))
+        (q60 (label_2 "d" "ed/past_participle"))
+        (label_2 (label_2 *e* "ed/past"))
+        (label_4 (q62 "i" *e*))
+        (label_4 (label_2 "s" "s/3sg"))
+        (label_4 (label_2 *e* *e*))
+        (q62 (q63 "n" *e*))
+        (q63 (label_2 "g" "ing/pres_part"))
     '''
 
     def test_expand_fsm(self):
@@ -264,24 +284,11 @@ class TestExpandFSM(TestCase):
         :return: void
         """
 
-        expander = ExpandMorphFSM(self.test_1_lexicon.split("\n"), self.test_1_morph_rules.split("\n"))
+        expander = ExpandMorphFSM(self.test_lexicon.split("\n"), self.test_morph_rules.split("\n"))
         expander.expand_morph_fsm()
         output_list = expander.print_in_carmel_format().split("\n")
 
-        expected_list = self.test_1_expected_output.strip().split("\n")
-        self.assertEqual(len(expected_list), len(output_list))
-
-    def test_expand_fsm_2(self):
-        """
-        Tests for expand_fsm
-        :return: void
-        """
-
-        expander = ExpandMorphFSM(self.test_2_lexicon.split("\n"), self.test_2_morph_rules.split("\n"))
-        expander.expand_morph_fsm()
-        output_list = expander.print_in_carmel_format().split("\n")
-
-        expected_list = self.test_1_expected_output.strip().split("\n")
+        expected_list = self.test_expected_output.strip().split("\n")
         self.assertEqual(len(expected_list), len(output_list))
 
 
