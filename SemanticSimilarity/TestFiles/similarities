@@ -1,0 +1,10 @@
+car the: 158 a: 62 in: 30 and: 27 his: 25 of: 24 was: 24 with: 17 to: 16 '': 12
+automobile the: 24 of: 13 and: 8 in: 7 an: 5 to: 5 state: 5 by: 4 as: 4 from: 4
+car,automobile:0.980751216137
+journey the: 10 of: 5 to: 5 a: 5 their: 4 an: 3 ``: 3 '': 3 in: 3 his: 3
+voyage the: 10 was: 3 a: 3 this: 3 of: 2 as: 2 i: 2 third: 2 second: 2 fourth: 2
+journey,voyage:0.969408033928
+magician a: 3 and: 2 had: 1 was: 1 to: 1 as: 1 has: 1 than: 1
+wizard the: 3 of: 3 a: 1 is: 1 who: 1 changes: 1 fashioned: 1 menlo: 1
+magician,wizard:0.983415102161
+correlation:-0.5
