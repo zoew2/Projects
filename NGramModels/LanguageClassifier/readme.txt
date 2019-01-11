@@ -1,5 +1,5 @@
-This class uses the given language models to create a language classifier to determine the most probable language for a
-given sentence and provide the probability that lead to that judgement.
+This class uses the given language models to create a naive bayesian classifier to determine the most probable language
+for a given sentence and provide the probability that lead to that judgement.
 
 For this project, I first stored the data from the language models into a dictionary, storing the unigram probabilities
 and total word counts of each language sample. Then, for each line in the test data, I sum the log probabilities of
