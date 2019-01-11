@@ -200,7 +200,7 @@ class Stop_Collection {
             $label++;
         }
         $parameters    = $size . $markers;
-        $key           = '&key=AIzaSyBAFEbAHnhuQVeFfxCSWeuaUazHPaN2K5A';
+        $key           = '**API KEY GOES HERE**';
         $url           = $url_part_1 . $parameters . $key;
         $this->map_url = $url;
     }
