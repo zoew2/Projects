@@ -1,0 +1,141 @@
+{{!
+Route Planner Mustache Template
+
+@author    Tami Gabriely
+@author    Zoe Winkworth
+}}
+
+<div class="main_content">
+    <div>
+        <h2>Route Planner</h2>
+        <article class="wfa_card">
+            <h2 class="wfa_card_title">Generate Routes!</h2>
+            <section class="wfa_card_body">
+                <form class="wfa_form_inline">
+                    <div class="wfa_input_group">
+                        <label class="wfa_label">Pick a date</label> {{{delivery_datepicker_component}}}
+                    </div>
+                    <br><br>
+                    <div class="wfa_input_group">
+                        <label class="wfa_label">What is your agent name? </label>
+                        <select class="js-agent-name wfa_input">
+                            {{#agents}}
+                            <option value="{{agent_name}}">{{agent_name}}</option>
+                            {{/agents}}
+                        </select>
+                    </div>
+                    <div class="wfa_input_group">
+                        <label class="wfa_label">How many trucks to use? </label>
+                        <input type="text" class="js-truck-count wfa_input" placeholder="5">
+                    </div>
+                    <div class="wfa_input_group">
+                        <label class="wfa_label">Optimize by?</label>
+                        <select class="js-optimize-by wfa_input">
+                            <option value="seconds">Time</option>
+                            <option value="meters">Distance</option>
+                        </select>
+                    </div>
+                    <button class="js-generate-routes wfa_btn_primary">Generate Routes!</button>
+                </form>
+            </section>
+        </article>
+        {{#truck_count_0}}
+        <div class="wfa_alert_banner">Please pick at least one truck! </div><br>
+        {{/truck_count_0}}
+        {{#truck_count_invalid}}
+        <div class="wfa_alert_banner">Please pick a valid number! </div><br>
+        {{/truck_count_invalid}}
+        {{#errors}}
+        <div class="wfa_alert_banner">{{message}}</div><br>
+        {{/errors}}
+    </div>
+    {{#route}}
+    {{#route_generated}}
+    <p>Leaving from: <span class="text_bold">{{depot_address}}</span></p>
+    <p> Total Time: <span class="text_bold">{{total_time}}</span></p>
+    <p> Total Distance: <span class="text_bold">{{total_distance}}</span></p>
+    <div class="wfa_table_header">
+        Truck Routes
+    </div>
+    <div class="wfa_table_container">
+        <form class="wfa_form_inline">
+            <table class="wfa_table">
+                <thead>
+                <tr class="table_header_row">
+                    <th class="table_header expand_row_header sorting_disabled"></th>
+                    <th class="table_header sorting">Truck number</th>
+                    <th class="table_header sorting">Driver ID</th>
+                    <th class="table_header sorting">Minutes</th>
+                    <th class="table_header sorting">Miles</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#trucks}}
+                <tr class="table_row table_row_expanded odd">
+                    <td class="js-expand-row cursor_pointer"><div class="expand_row_icon"></div></td>
+                    <td class="table_data_cell">
+                        <div class="wfa_input_group">
+                            <label class="wfa_label">Truck </label>
+                            <select class="js-truck-id wfa_input">
+                                {{#truck_options}}
+                                <option value="{{truck_id}}">{{truck_id}}</option>
+                                {{/truck_options}}
+                            </select>
+                        </div>
+                    </td>
+                    <td class="table_data_cell">
+                        <div class="wfa_input_group">
+                            <label class="wfa_label">Driver </label>
+                            <select class="js-driver-id wfa_input">
+                                {{#drivers}}
+                                <option value="{{driver_id}}">{{driver_id}}</option>
+                                {{/drivers}}
+                            </select>
+                        </div>
+                    </td>
+                    <td class="table_data_cell">{{truck_time}}</td>
+                    <td class="table_data_cell">{{truck_distance}}</td>
+                </tr>
+                <tr class="detail_row js-detail-row">
+                    <td colspan="3">
+                        <div class="details_row">
+                            <div class="details_row_header">
+                                Stops
+                            </div>
+                            {{#models}}
+                            <table class="js-stop details_row_table">
+                                <tr class="details_row_table_row">
+                                    <td class="details_row_table_cell text_bold">
+                                        {{sequence_letter}}
+                                    </td>
+                                    <td class="details_row_table_cell">
+                                        {{id}}
+                                    </td>
+                                    <td class="details_row_table_cell">
+                                        {{full_address}}
+                                    </td>
+                                </tr>
+                            </table>
+                            {{/models}}
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <img src="{{map_url}}">
+                    </td>
+                </tr>
+                {{/trucks}}
+                </tbody>
+            </table>
+            <br><br>
+            <div class="wfa_flex_row align_right">
+                <button class="js-save-route wfa_btn_primary">Save Route!</button>
+                <br><br>
+                {{#success}}
+                <div class="wfa_success_banner">{{success}}</div>
+                {{/success}}
+            </div>
+        </form>
+    </div>
+    {{/route_generated}}
+    {{/route}}
+</div>
