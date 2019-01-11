@@ -145,7 +145,7 @@ class TestNFAtoDFA(TestCase):
         :return:
         """
 
-        nfa_filename = './TestFSAs/nfa1'
+        nfa_filename = './TestFiles/nfa1'
 
         with open(nfa_filename, "r") as nfa_file:
             nfa_rules = nfa_file.readlines()
@@ -160,7 +160,7 @@ class TestNFAtoDFA(TestCase):
         Tests for NFA1
         :return: void
         """
-        nfa_filename = './TestFSAs/nfa1'
+        nfa_filename = './TestFiles/nfa1'
 
         with open(nfa_filename, "r") as nfa_file:
             nfa_rules = nfa_file.readlines()
@@ -168,7 +168,7 @@ class TestNFAtoDFA(TestCase):
         converter = NFAtoDFA(nfa_rules)
         converter.convert_nfa_to_dfa()
 
-        dfa_filename = './TestFSAs/dfa1'
+        dfa_filename = './TestFiles/dfa1'
 
         with open(dfa_filename, "r") as dfa_file:
             expected = [line.strip("\n") for line in dfa_file.readlines()]

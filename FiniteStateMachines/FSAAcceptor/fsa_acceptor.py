@@ -97,7 +97,7 @@ class TestFSAAcceptor(TestCase):
         Tests for FSA1
         :return: void
         """
-        fsa_filename = './TestFSAs/fsa1'
+        fsa_filename = './TestFiles/fsa1'
 
         with open(fsa_filename, "r") as fsa_file:
             fsa_rules = fsa_file.readlines()
@@ -115,7 +115,7 @@ class TestFSAAcceptor(TestCase):
         Tests for FSA2
         :return: void
         """
-        fsa_filename = './TestFSAs/fsa2'
+        fsa_filename = './TestFiles/fsa2'
 
         with open(fsa_filename, "r") as fsa_file:
             fsa_rules = fsa_file.readlines()
@@ -133,7 +133,7 @@ class TestFSAAcceptor(TestCase):
         Tests for FSA3
         :return: void
         """
-        fsa_filename = './TestFSAs/fsa3'
+        fsa_filename = './TestFiles/fsa3'
 
         with open(fsa_filename, "r") as fsa_file:
             fsa_rules = fsa_file.readlines()
@@ -151,7 +151,7 @@ class TestFSAAcceptor(TestCase):
         Tests for FSA4
         :return:
         """
-        fsa_filename = './TestFSAs/fsa4'
+        fsa_filename = './TestFiles/fsa4'
 
         with open(fsa_filename, "r") as fsa_file:
             fsa_rules = fsa_file.readlines()

@@ -119,7 +119,7 @@ class TestFSTAcceptor(TestCase):
         Tests for FST1
         :return: void
         """
-        fst_filename = './TestFSTs/fst1'
+        fst_filename = './TestFiles/fst1'
 
         with open(fst_filename, "r") as fst_file:
             fst_rules = fst_file.readlines()
@@ -141,7 +141,7 @@ class TestFSTAcceptor(TestCase):
         Tests for FST2
         :return: void
         """
-        fst_filename = './TestFSTs/fst2'
+        fst_filename = './TestFiles/fst2'
 
         with open(fst_filename, "r") as fst_file:
             fst_rules = fst_file.readlines()
@@ -163,7 +163,7 @@ class TestFSTAcceptor(TestCase):
         Tests for FST3
         :return: void
         """
-        fst_filename = './TestFSTs/fst3'
+        fst_filename = './TestFiles/fst3'
 
         with open(fst_filename, "r") as fst_file:
             fst_rules = fst_file.readlines()

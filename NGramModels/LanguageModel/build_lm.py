@@ -80,7 +80,7 @@ class BuildLanguageModel:
             model['bigrams'][bigram]['count'] = count
             model['bigrams'][bigram]['words'] = [w1, w2]
 
-            #calculate the probability using maximum likelihood estimation
+            # calculate the probability using maximum likelihood estimation
             model['bigrams'][bigram]['prob'] = count / unigram_count
             model['bigrams'][bigram]['logprob'] = log10(model['bigrams'][bigram]['prob'])
 

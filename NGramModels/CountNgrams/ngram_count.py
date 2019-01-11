@@ -80,42 +80,6 @@ class TestNgramCount(TestCase):
 
     test_sentences = ['this is a test for the counter so this is a test sentence']
 
-    test_expected = [
-        '2\ta',
-        '2\tis',
-        '2\ttest',
-        '2\tthis',
-        '1\t</s>',
-        '1\t<s>',
-        '1\tcounter',
-        '1\tfor',
-        '1\tsentence',
-        '1\tso',
-        '1\tthe',
-        '2\ta test',
-        '2\tis a',
-        '2\tthis is',
-        '1\t<s> this',
-        '1\tcounter so',
-        '1\tfor the',
-        '1\tsentence </s>',
-        '1\tso this',
-        '1\ttest for',
-        '1\ttest sentence',
-        '1\tthe counter',
-        '2\tis a test',
-        '2\tthis is a',
-        '1\t<s> this is',
-        '1\ta test for',
-        '1\ta test sentence',
-        '1\tcounter so this',
-        '1\tfor the counter',
-        '1\tso this is',
-        '1\ttest for the',
-        '1\ttest sentence </s>',
-        '1\tthe counter so'
-    ]
-
     def test_ngram_count(self):
         """
         Tests for ngram_count
@@ -124,7 +88,10 @@ class TestNgramCount(TestCase):
 
         counter = NgramCount(self.test_sentences)
         ngrams = counter.ngrams_to_string_sorted()
-        self.assertEqual(ngrams.strip().split("\n"), self.test_expected)
+
+        with open('./TestFiles/ngrams', "r") as expected_ngrams:
+            test_expected = expected_ngrams.readlines()
+        self.assertEqual(ngrams.split("\n"), [x.strip("\n") for x in test_expected])
 
 
 def main():

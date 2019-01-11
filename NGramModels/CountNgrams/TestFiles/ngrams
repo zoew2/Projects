@@ -1,0 +1,33 @@
+2	a
+2	is
+2	test
+2	this
+1	</s>
+1	<s>
+1	counter
+1	for
+1	sentence
+1	so
+1	the
+2	a test
+2	is a
+2	this is
+1	<s> this
+1	counter so
+1	for the
+1	sentence </s>
+1	so this
+1	test for
+1	test sentence
+1	the counter
+2	is a test
+2	this is a
+1	<s> this is
+1	a test for
+1	a test sentence
+1	counter so this
+1	for the counter
+1	so this is
+1	test for the
+1	test sentence </s>
+1	the counter so
