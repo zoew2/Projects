@@ -1,5 +1,5 @@
-These are controllers developed for the Pacman AI projects developed at UC Berkeley. (http://inst.eecs.berkeley
-.edu/~cs188/pacman/home.html)
+These are controllers developed for the Pacman AI projects developed at UC Berkeley.
+(http://inst.eecs.berkeley.edu/~cs188/pacman/home.html)
 
 Whenever it is Ms. Pacman’s turn to move in the game, the getMove() method in this class is called and gives the game
 board the move that Ms. Pacman chooses to make that turn in order to get her closer to her goal. The framework for this
