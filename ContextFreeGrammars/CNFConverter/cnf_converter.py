@@ -4,6 +4,7 @@ import sys
 import nltk
 from unittest import TestCase
 
+
 class CNFConverter:
     """
     This class converts a given Context Free Grammar into Chomsky Normal Form
@@ -148,6 +149,7 @@ class CNFConverter:
             if self.is_long(rule.rhs()):
                 self.convert_long_productions(rule.lhs().symbol(), list(rule.rhs()))
 
+
 class TestCNFConverter(TestCase):
     """
     This class contains tests for the CNFConverter class
@@ -164,7 +166,12 @@ class TestCNFConverter(TestCase):
         converter.cnf_grammar = {}
         converter.convert_grammar(grammar)
 
-        self.assertDictEqual(converter.cnf_grammar, {"NP": ["THE Nom"], "THE": ['"the"']})
+        expected_grammar = {
+            "NP": ["THE Nom"],
+            "THE": ['"the"']
+        }
+
+        self.assertDictEqual(converter.cnf_grammar, expected_grammar)
 
     def test_unit_production(self):
         """
@@ -177,7 +184,13 @@ class TestCNFConverter(TestCase):
         converter.cnf_grammar = {}
         converter.convert_grammar(grammar)
 
-        self.assertDictEqual(converter.cnf_grammar, {"QP": ['"word"', '"word2"'], "VP": ['"word"', '"word2"'], "V": ['"word"', '"word2"']})
+        expected_grammar = {
+            "QP": ['"word"', '"word2"'],
+            "VP": ['"word"', '"word2"'],
+            "V": ['"word"', '"word2"']
+        }
+
+        self.assertDictEqual(converter.cnf_grammar, expected_grammar)
 
     def test_long_production(self):
         """
@@ -190,7 +203,12 @@ class TestCNFConverter(TestCase):
         converter.cnf_grammar = {}
         converter.convert_grammar(grammar)
 
-        self.assertDictEqual(converter.cnf_grammar, {"NP": ["X1 N"], "X1": ["Det Adj"]})
+        expected_grammar = {
+            "NP": ["X1 N"],
+            "X1": ["Det Adj"]
+        }
+
+        self.assertDictEqual(converter.cnf_grammar, expected_grammar)
 
     def test_long_unit(self):
         """
@@ -203,11 +221,19 @@ class TestCNFConverter(TestCase):
         converter.cnf_grammar = {}
         converter.convert_grammar(grammar)
 
-        self.assertDictEqual(converter.cnf_grammar, {"SIGMA": ["X1 INFCL_VB", "X2 pt_char_per"],
-                                                   "X1": ["NP_WPS VERB_VBS"], "X2": ["X3 NP_NN"],
-                                                   "X3": ["NP_DT VERB_DOZ"], "NREL_VBZ": ["X4 INFCL_VB"],
-                                                   "DECL_DOZ": ["X5 pt_char_per"], "X4": ["NP_WPS VERB_VBS"], "X5": ["X6 NP_NN"],
-                                                   "X6": ["NP_DT VERB_DOZ"]})
+        expected_grammar = {
+            "SIGMA": ["X1 INFCL_VB", "X2 pt_char_per"],
+            "X1": ["NP_WPS VERB_VBS"],
+            "X2": ["X3 NP_NN"],
+            "X3": ["NP_DT VERB_DOZ"],
+            "NREL_VBZ": ["X4 INFCL_VB"],
+            "DECL_DOZ": ["X5 pt_char_per"],
+            "X4": ["NP_WPS VERB_VBS"],
+            "X5": ["X6 NP_NN"],
+            "X6": ["NP_DT VERB_DOZ"]
+        }
+
+        self.assertDictEqual(converter.cnf_grammar, expected_grammar)
 
     def test_hybrid_long(self):
         """
@@ -220,7 +246,15 @@ class TestCNFConverter(TestCase):
         converter.cnf_grammar = {}
         converter.convert_grammar(grammar)
 
-        self.assertDictEqual(converter.cnf_grammar, {"NP": ["X1 Nom"], "THE": ['"the"'], "TO": ['"to"'], "X1": ["X2 TO"], "X2": ["THE Nom"]})
+        expected_grammar = {
+            "NP": ["X1 Nom"],
+            "THE": ['"the"'],
+            "TO": ['"to"'],
+            "X1": ["X2 TO"],
+            "X2": ["THE Nom"]
+        }
+
+        self.assertDictEqual(converter.cnf_grammar, expected_grammar)
         
 
 def main():
@@ -243,6 +277,7 @@ def main():
         output.write(key + " -> " + " | ".join(value) + "\n")
 
     output.close()
+
 
 if __name__ == "__main__":
     main()
