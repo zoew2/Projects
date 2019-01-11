@@ -1,0 +1,2 @@
+(S (NP (Det the) (N cat)) (VP (V chased) (NP (Det the) (N dog))))
+(S (NP (Det a) (N dog)) (VP (V chased) (NP (Det a) (N shark))))
