@@ -1,5 +1,5 @@
 """
-Load dependency parsed tweets for BECR algorithm
+Load dependency parsed tweets for BECR-TweetEmotionCauseRelation algorithm
 """
 import sys
 import os.path

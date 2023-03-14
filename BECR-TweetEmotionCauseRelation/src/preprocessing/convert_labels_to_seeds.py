@@ -1,5 +1,5 @@
 """
-Script for converting labeled training data to seed dictionary for BECR algorithm
+Script for converting labeled training data to seed dictionary for BECR-TweetEmotionCauseRelation algorithm
 """
 
 import sys
@@ -109,7 +109,7 @@ class LabelToSeed:
 
 def main():
     """
-    Convert labeled tweets to training seeds for the BECR algorithm
+    Convert labeled tweets to training seeds for the BECR-TweetEmotionCauseRelation algorithm
     :return: void
     """
     tweet_tokens = sys.argv[1]

@@ -273,7 +273,7 @@ def parse_args(args):
 
 def main():
     """
-    Run BECR algorithm on Tweets and create list of
+    Run BECR-TweetEmotionCauseRelation algorithm on Tweets and create list of
     emotion-cause relations that are found
     :return: void
     """
