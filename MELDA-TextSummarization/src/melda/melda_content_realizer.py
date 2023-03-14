@@ -1,5 +1,5 @@
 """
-Compress sentences for content realization component of MELDA
+Compress sentences for content realization component of MELDA-TextSummarization
 """
 
 from nltk.tokenize.treebank import TreebankWordDetokenizer

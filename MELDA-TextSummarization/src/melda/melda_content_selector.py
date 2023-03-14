@@ -8,7 +8,7 @@ import gensim
 
 class MeldaContentSelector(MeadContentSelector):
     """
-    Select content using MELDA scores
+    Select content using MELDA-TextSummarization scores
     """
 
     lda_model = None
@@ -53,7 +53,7 @@ class MeldaContentSelector(MeadContentSelector):
 
     def calculate_melda_scores(self, sentences):
         """
-        Calculate MELDA scores for each of the given sentences
+        Calculate MELDA-TextSummarization scores for each of the given sentences
         :param sentences: the given sentences
         :return: list of sentences with melda_scores populated
         """
@@ -64,7 +64,7 @@ class MeldaContentSelector(MeadContentSelector):
 
     def select_content(self, documents, args, idf_array=None,):
         """
-        Select content based on MELDA scores
+        Select content based on MELDA-TextSummarization scores
         :param documents: the list of documents
         :param args: arguments
         :param idf_array: idf array

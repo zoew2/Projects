@@ -1,5 +1,5 @@
 """
-New MELDA class to handle information ordering of selected output
+New MELDA-TextSummarization class to handle information ordering of selected output
 Uses a cohesion gradient for sentence topics
 """
 

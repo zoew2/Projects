@@ -4,7 +4,7 @@ from src.melda.melda_content_realizer import MeldaContentRealizer
 
 class MeldaSummaryGenerator(MeadSummaryGenerator):
     """
-    Summarize documents using MELDA
+    Summarize documents using MELDA-TextSummarization
     """
 
     def pre_process(self, documents):
