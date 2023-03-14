@@ -1,0 +1,202 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "talking reddit",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "GetPostIntent",
+          "slots": [
+            {
+              "name": "subreddit",
+              "type": "SubReddit"
+            },
+            {
+              "name": "sortby",
+              "type": "SortBy"
+            }
+          ],
+          "samples": [
+            "ask me a {sortby} {subreddit}",
+            "ask me a {subreddit}",
+            "show me {sortby} {subreddit}",
+            "tell me about {sortby} {subreddit}",
+            "{sortby} {subreddit}",
+            "{subreddit}",
+            "tell me about {subreddit}",
+            "show me {subreddit}"
+          ]
+        },
+        {
+          "name": "VoteIntent",
+          "slots": [
+            {
+              "name": "direction",
+              "type": "VoteDirection"
+            }
+          ],
+          "samples": [
+            "{direction} that",
+            "{direction} this post",
+            "{direction}"
+          ]
+        },
+        {
+          "name": "CommentIntent",
+          "slots": [],
+          "samples": []
+        },
+        {
+          "name": "GildIntent",
+          "slots": [],
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "SortBy",
+          "values": [
+            {
+              "name": {
+                "value": "Rising"
+              }
+            },
+            {
+              "name": {
+                "value": "Controversial"
+              }
+            },
+            {
+              "name": {
+                "value": "Top"
+              }
+            },
+            {
+              "name": {
+                "value": "New",
+                "synonyms": [
+                  "newest"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Hot",
+                "synonyms": [
+                  "hottest"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "SubReddit",
+          "values": [
+            {
+              "id": "quotes",
+              "name": {
+                "value": "Quotes",
+                "synonyms": [
+                  "quotes",
+                  "quote"
+                ]
+              }
+            },
+            {
+              "id": "AskReddit",
+              "name": {
+                "value": "Question",
+                "synonyms": [
+                  "questions",
+                  "question"
+                ]
+              }
+            },
+            {
+              "id": "memes",
+              "name": {
+                "value": "Meme",
+                "synonyms": [
+                  "memes"
+                ]
+              }
+            },
+            {
+              "id": "gifs",
+              "name": {
+                "value": "Gif"
+              }
+            },
+            {
+              "id": "ShowerThoughts",
+              "name": {
+                "value": "Secret"
+              }
+            },
+            {
+              "id": "DadJokes",
+              "name": {
+                "value": "Joke"
+              }
+            },
+            {
+              "id": "pics",
+              "name": {
+                "value": "Picture",
+                "synonyms": [
+                  "image",
+                  "pic",
+                  "pictures",
+                  "picture",
+                  "pics"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "VoteDirection",
+          "values": [
+            {
+              "id": "-1",
+              "name": {
+                "value": "downvote",
+                "synonyms": [
+                  "thumbs down",
+                  "dislike",
+                  "down"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "upvote",
+                "synonyms": [
+                  "thumbs up",
+                  "like",
+                  "up"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+hashtag='../data/hashtagemotion/Jan9-2012-tweets-clean.txt'
+semeval215_train='../data/semeval-2016/2_pt/eng/twitter-2015train-BD.txt'
+semeval215_test='../data/semeval-2016/2_pt/eng/twitter-2015testBD.txt'
+semeval216_train='../data/semeval-2016/2_pt/eng/twitter-2016train-BD.txt'
+semeval216_dev='../data/semeval-2016/2_pt/eng/twitter-2016dev-BD.txt'
+semeval216_devtest='../data/semeval-2016/2_pt/eng/twitter-2016devtest-BD.txt'
+semeval216_test='../data/semeval-2016/2_pt/eng/twitter-2016test-BD.txt'
+semeval516_train='../data/semeval-2016/5_pt/eng/twitter-2016train-CE.txt'
+semeval516_dev='../data/semeval-2016/5_pt/eng/twitter-2016dev-CE.txt'
+semeval516_devtest='../data/semeval-2016/5_pt/eng/twitter-2016devtest-CE.txt'
+semeval516_test='../data/semeval-2016/5_pt/eng/twitter-2016test-CE.txt'
+semeval18_train='../data/semeval-2018/2018-E-c-En-train.txt'
+semeval18_dev='../data/semeval-2018/2018-E-c-En-dev.txt'
+semeval18_test='../data/semeval-2018/2018-E-c-En-test.txt'
+
+# code to filter data by other lexicons
+#/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${hashtag} 'dm' 'hashtag' 'tweets'
+#/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${hashtag} 'nrc' 'hashtag' 'tweets'
+#/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${hashtag} 'kwsyns' 'hashtag' 'tweets'
+
+# filter all the datasets by the keyword list and output them to the same file
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${hashtag} 'kw' 'hashtag' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval215_train} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval215_test} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval216_train} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval216_dev} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval216_devtest} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval216_test} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval516_train} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval516_dev} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval516_devtest} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval516_test} 'kw' 'semeval16' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval18_train} 'kw' 'semeval18' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval18_dev} 'kw' 'semeval18' 'tweets'
+/opt/python-3.6/bin/python3.6 filter_by_emotion.py ${semeval18_test} 'kw' 'semeval18' 'tweets'

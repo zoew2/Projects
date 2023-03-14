@@ -1,0 +1,18 @@
+{
+  "name": "hearddit",
+  "version": "0.0.1",
+  "description": "voice enabled reddit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amazon Alexa",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk": "^2.5.1",
+    "ask-sdk-core": "latest",
+    "ask-sdk-model": "^1.4.1",
+    "aws-sdk": "latest",
+    "axios": "^0.18.0"
+  }
+}
